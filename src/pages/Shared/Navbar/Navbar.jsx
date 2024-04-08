@@ -79,7 +79,7 @@ const Navbar = () => {
         </div>
 
         <div>
-          <Link>
+          <Link to="/login">
             <button className="btn rounded-none bg-[#403F3F] text-white hover:bg-black">
               Login
             </button>
