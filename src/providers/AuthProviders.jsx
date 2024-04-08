@@ -1,8 +1,10 @@
+import PropTypes from "prop-types";
 import { createContext } from "react";
-
-const AuthProviders = () => {
-  export const AuthContex = createContext(null);
-  return <AuthContex.Provider></AuthContex.Provider>;
+export const AuthContex = createContext(null);
+const AuthProviders = ({ children }) => {
+  return <AuthContex.Provider>{children}</AuthContex.Provider>;
 };
-
+AuthProviders.propTypes = {
+  children: PropTypes.object,
+};
 export default AuthProviders;
