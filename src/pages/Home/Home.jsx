@@ -15,10 +15,10 @@ const Home = () => {
       <BreakingNews></BreakingNews>
       <Navbar></Navbar>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div className="border">
+        <div className="">
           <RightNav></RightNav>
         </div>
-        <div className="lg:col-span-2 border">
+        <div className="lg:col-span-2 ">
           {news.map((aNews) => (
             <NewsCard key={aNews._id} aNews={aNews}></NewsCard>
           ))}
