@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import Navbar from "../Shared/Navbar/Navbar";
+import { AuthContex } from "../../providers/AuthProviders";
 
 const Registetion = () => {
+  const { createUser } = useContext(AuthContex);
+
   const handleRegistation = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -10,6 +14,14 @@ const Registetion = () => {
     const email = form.get("email");
     const password = form.get("password");
     console.log(name, photo, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   return (
     <div>
