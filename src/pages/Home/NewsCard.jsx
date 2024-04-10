@@ -4,7 +4,8 @@ import { IoEyeSharp } from "react-icons/io5";
 import { FaRegBookmark } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 const NewsCard = ({ aNews }) => {
-  const { author, details, title, thumbnail_url, rating, total_view } = aNews;
+  const { _id, author, details, title, thumbnail_url, rating, total_view } =
+    aNews;
   return (
     <div className="border mb-8">
       <div>
@@ -34,7 +35,13 @@ const NewsCard = ({ aNews }) => {
             {details.length > 200 ? (
               <p>
                 {details.slice(0, 200)} <br />{" "}
-                <Link className="text-[#F75B5F] font-semibold"> Read More</Link>
+                <Link
+                  to={`/news/${_id}`}
+                  className="text-[#F75B5F] font-semibold"
+                >
+                  {" "}
+                  Read More
+                </Link>
               </p>
             ) : (
               <p>{details}</p>
