@@ -13,16 +13,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <PrivetRoutes>
-            <Home></Home>
-          </PrivetRoutes>
-        ),
+        element: <Home></Home>,
         loader: () => fetch("/news.json"),
       },
       {
         path: "/news/:id",
-        element: <News></News>,
+        element: (
+          <PrivetRoutes>
+            <News></News>
+          </PrivetRoutes>
+        ),
       },
       {
         path: "/login",
